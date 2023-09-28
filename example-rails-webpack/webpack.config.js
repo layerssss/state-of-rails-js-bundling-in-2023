@@ -1,5 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
+const WebpackAssetsManifest = require('webpack-assets-manifest');
 
 const NODE_ENV = process.env.RAILS_ENV || process.env.NODE_ENV || "development";
 
@@ -16,11 +17,6 @@ module.exports = {
     sourceMapFilename: "[file].map",
     path: path.resolve(__dirname, "app/assets/builds"),
   },
-  plugins: [
-    new webpack.optimize.LimitChunkCountPlugin({
-      maxChunks: 1,
-    }),
-  ],
   resolve: {
     extensions: [".js", ".jsx"],
     modules: [
@@ -28,6 +24,13 @@ module.exports = {
       path.resolve(__dirname, "node_modules"),
     ],
   },
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+      // maxSize: 100000
+    },
+  },
+  plugins: [new WebpackAssetsManifest()],
   module: {
     rules: [
       {
