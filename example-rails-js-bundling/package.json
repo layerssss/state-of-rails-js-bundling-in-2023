@@ -1,0 +1,15 @@
+{
+  "name": "app",
+  "private": "true",
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/joy": "^5.0.0-beta.8",
+    "esbuild": "^0.19.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "scripts": {
+    "build": "esbuild app/javascript/application.js --loader:.js=jsx --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets --minify"
+  }
+}
