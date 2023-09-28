@@ -2,8 +2,13 @@
   "name": "app",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/joy": "^5.0.0-beta.8",
     "compression-webpack-plugin": "9",
     "esbuild-loader": "^4.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "shakapacker": "7.0.3",
     "webpack": "5",
     "webpack-assets-manifest": "5",
